@@ -1,6 +1,6 @@
-const btn1 = document.getElementById('btn1')
+async function getPage(ref) {
+  let response = await fetch(ref)
+  let content = await response.text()
+  return content
+}
 
-// Listeners
-btn1.addEventListener('click', (e) => {
-  alert("clicked !");
-})
