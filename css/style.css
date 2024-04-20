@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -13,16 +17,104 @@ h1 {
   padding: 20px;
 }
 
-button {
+.btn {
   background-color: #4CAF50;
   color: white;
   font-size: 18px;
   padding: 12px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
 }
 
-button:hover {
+.btn:hover {
   background-color: #3e8e41;
+}
+
+.totop {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #444;
+  cursor: pointer;
+}
+
+.totop a {
+  text-decoration: none;
+}
+
+.totop::after{
+  content: '';
+  margin-top: 12px;
+  border: solid #fff;
+  border-width: 4px 0px 0px 4px;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+}
+
+.grid_wrapper {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "sidebar body"
+}
+
+.sidebar {
+  align-self: start;
+  position: sticky;
+  grid-area: sidebar;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  padding-top: 2em;
+  background-color: #222120;
+  min-height: 100vh;
+}
+
+.sidebar div {
+  padding : 0.5em 1em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.gbody {
+  align-self: start;
+  grid-area: body;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #272727;
+  min-height: 100vh;
+}
+
+.bdgrid {
+  align-self: start;
+  padding-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1em;
+}
+
+.bdgrid2 {
+  padding-top: 2em;
+  align-self: start;
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 1em;
+}
+
+.bdgrid img {
+  /*display: inline-block;*/
+  border-radius: 10px;
+  height : 200px;
 }
