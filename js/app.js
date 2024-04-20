@@ -27,7 +27,9 @@ async function linkListener(key){
   if (nav_elements[key].url){
     const html = await getPage(nav_elements[key].url)
     clearElement(document.getElementById('bdgrid'));
-    document.getElementById('bdgrid').appendChild(html)
+    const h1 = document.createElement('div')
+    h1.innerHTML = html
+    document.getElementById('bdgrid').appendChild(h1)
   }
 }
 
