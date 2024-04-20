@@ -1,8 +1,8 @@
 const nav_elements  = {
   E1: { name: "Everquest", img : "img/EQ1_sof.jpg"},
-  E2: { name: "World of Warcraft", img : "img/wow1.jpg", url : "warframe/warframe.html"},
+  E2: { name: "World of Warcraft", img : "img/wow1.jpg"},
   E3: { name: "Path of Exile", img : "img/poe1.jpg"},
-  E4: { name: "Warframe", img : "img/wf1.jpg"},
+  E4: { name: "Warframe", img : "img/wf1.jpg", url : "warframe/warframe.html"}
 }
   // E10: { name: "Element 10", url : "https://picsum.photos/300/200?random=10"},
 
@@ -24,9 +24,7 @@ function clearElement(element) {
 }
 
 async function linkListener(key){
-  console.log(key)
   if (nav_elements[key].url){
-    console.log(nav_elements[key].url)
     const html = await getPage(nav_elements[key].url)
     console.log(html)
   }
