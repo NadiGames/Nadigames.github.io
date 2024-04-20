@@ -24,7 +24,10 @@ function clearElement(element) {
 }
 
 function linkListener(key){
-  console.log(key)
+ if (nav_elements[key].url){
+   const html = getPage(nav_elements[key].url)
+   console.log(html)
+ }
 }
 
 function buildLayout(){
