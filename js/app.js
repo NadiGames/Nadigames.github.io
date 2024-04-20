@@ -26,7 +26,8 @@ function clearElement(element) {
 async function linkListener(key){
   if (nav_elements[key].url){
     const html = await getPage(nav_elements[key].url)
-    console.log(html)
+    clearElement(document.getElementById('bdgrid'));
+    document.getElementById('bdgrid').appendChild(html)
   }
 }
 
