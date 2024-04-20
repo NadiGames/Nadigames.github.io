@@ -23,7 +23,7 @@ function clearElement(element) {
   }
 }
 
-function linkListener(key){
+async function linkListener(key){
  if (nav_elements[key].url){
    const html = await getPage(nav_elements[key].url)
    console.log(html)
