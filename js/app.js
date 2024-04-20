@@ -26,6 +26,7 @@ function clearElement(element) {
 async function linkListener(key){
   console.log(key)
   if (nav_elements[key].url){
+    console.log(nav_elements[key].url)
     const html = await getPage(nav_elements[key].url)
     console.log(html)
   }
@@ -70,6 +71,7 @@ function buildLayout2(){
 async function getPage(ref) {
   let response = await fetch(ref)
   let content = await response.text()
+  console.log(content)
   return content
 }
 
